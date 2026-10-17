@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
-namespace singleton_pattern.EndlessRunner;
+namespace singleton_pattern.SingletonPattern.Managers;
 
 public class InputManager
 {

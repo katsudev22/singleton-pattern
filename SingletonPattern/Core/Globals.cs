@@ -2,7 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace singleton_pattern.EndlessRunner;
+namespace singleton_pattern.SingletonPattern.Core;
 
 public static class Globals
 {

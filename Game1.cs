@@ -1,13 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using singleton_pattern.EndlessRunner;
+using singleton_pattern.SingletonPattern.Core;
+using singleton_pattern.SingletonPattern.Managers;
 
 namespace singleton_pattern;
 
 public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
-
+    private GameManager _gameManager;
+    
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -29,15 +31,15 @@ public class Game1 : Game
         Globals.GraphicsDevice = GraphicsDevice;
         Globals.SpriteBatch = new SpriteBatch(Globals.GraphicsDevice);
         Globals.ContentManager = Content;
-        
-        GameManager.Initialize();
+
+        _gameManager = new();
         InputManager.Initialize();
     }
 
     protected override void Update(GameTime gameTime)
     {
         Globals.Update(gameTime);
-        GameManager.Update();
+        _gameManager.Update();
         InputManager.Update();
         
         base.Update(gameTime);
@@ -48,7 +50,7 @@ public class Game1 : Game
         GraphicsDevice.Clear(Color.AntiqueWhite);
 
         Globals.SpriteBatch.Begin();
-        GameManager.Draw();
+        _gameManager.Draw();
         Globals.SpriteBatch.End();
         
         base.Draw(gameTime);

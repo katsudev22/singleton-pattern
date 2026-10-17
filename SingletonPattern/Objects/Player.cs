@@ -1,8 +1,10 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using singleton_pattern.SingletonPattern.Core;
+using singleton_pattern.SingletonPattern.Managers;
 
-namespace singleton_pattern.EndlessRunner.Objects;
+namespace singleton_pattern.SingletonPattern.Objects;
 
 public class Player
 {
